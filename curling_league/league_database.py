@@ -30,11 +30,15 @@ class LeagueDatabase:
                 cls._sole_instance = pickle.load(f)
             print("Backup may have worked!")
 
+    @property
     def leagues(self):
         return self._leagues
 
     def add_league(self, league):
         self._leagues.append(league)
+
+    def remove_league(self, league):
+        self._leagues.remove(league)
 
     def next_oid(self):
         self._last_oid += 1
@@ -58,7 +62,7 @@ class LeagueDatabase:
                                      'Member name': member.name,
                                      'Member email': member.email})
 
-    def import_league(self, league_name, file_name):
+    def import_league(self, new_league, file_name):
         imported_league = {}
         i = 0
         try:
@@ -85,9 +89,6 @@ class LeagueDatabase:
 
             oid = self.next_oid()
 
-            # Create a new league and add each team and member to the
-            new_leauge = League(oid, league_name)
-
             # Go through each team in the dictionary and add to the new league
             for team in imported_league.keys():
                 oid = self.next_oid()
@@ -99,10 +100,10 @@ class LeagueDatabase:
                     new_team.add_member(player)
 
                 # Add the team to the new league
-                new_leauge.add_team(new_team)
+                new_league.add_team(new_team)
 
             # Add the league to the database
-            self.add_league(new_leauge)
+            self.add_league(new_league)
 
         # Catch errors
         except FileExistsError:
