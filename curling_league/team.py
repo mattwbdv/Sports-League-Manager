@@ -45,4 +45,5 @@ class Team(IdentifiedObject):
 
     # __str__() -- return a string like the following: "Team Name: N members"
     def __str__(self):
-        return str(self.name + ": " + len(self.members))
+        return f'{self.name}'
+        # return str(self.name + ": " + len(self.members))

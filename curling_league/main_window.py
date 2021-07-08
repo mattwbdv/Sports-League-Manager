@@ -1,11 +1,13 @@
 import sys
 
 from PyQt5.QtWidgets import QFileDialog
+from PyQt5 import uic, QtWidgets
+from PyQt5.QtWidgets import QDialog
 
+from curling_league.edit_league_dialogue import EditLeagueDialogue
 from curling_league.league_database import LeagueDatabase
 from curling_league.league import League
 
-from PyQt5 import uic, QtWidgets
 
 UI_MainWindow, QTBaseWindow = uic.loadUiType("main_window.ui")
 
@@ -29,6 +31,12 @@ class MainWindow(QTBaseWindow, UI_MainWindow):
 
         # loads new league
         self.load_league_button.clicked.connect(self.load_league_clicked)
+
+        # edit league modal opens
+        self.edit_selected_league.clicked.connect(self.edit_league_clicked)
+
+        # file > quit closes program
+        self.action_quit.triggered.connect(self.action_quit_triggered)
 
     def add_button_clicked(self):
         league_oid = LeagueDatabase.instance().next_oid()
@@ -55,12 +63,21 @@ class MainWindow(QTBaseWindow, UI_MainWindow):
         if result:
             LeagueDatabase.instance().save(result)
 
-
     def load_league_clicked(self):
         result, _ = QFileDialog.getOpenFileName(
             self, "Choose league to open")
         if result:
             LeagueDatabase.instance().load(result)
+
+    def action_quit_triggered(self):
+        exit()
+
+    def edit_league_clicked(self):
+        row = self.league_list_widget.currentRow()
+        league = LeagueDatabase.instance().leagues[row]
+        dialog = EditLeagueDialogue(league)
+        if dialog.exec() == QDialog.DialogCode.Accepted:
+            pass
 
 
 if __name__ == '__main__':
