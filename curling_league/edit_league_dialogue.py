@@ -30,19 +30,15 @@ class EditLeagueDialogue(QTBaseWindow, UI_MainWindow):
 
         # create team object
         team_to_add = Team(team_oid, team_name)
-
         # add team to the instance of the league
-        LeagueDatabase.instance().add_team_to_league(self.league, team_to_add)
-
-        # update the ui 
+        self.league.add_team(team_to_add)
+        # update the ui
         self.update_ui()
 
     def remove_button_clicked(self):
-        # TODO
-        # should we have an array of teams duplicated here and then interfacing with the database?
         row_to_remove = self.teams_list_widget.currentRow()
-        team_to_remove = LeagueDatabase.instance().self.leagues.teams[row_to_remove]
-        LeagueDatabase.instance().remove_team(team_to_remove)
+        team_to_remove = self.league.teams[row_to_remove]
+        self.league.remove_team(team_to_remove)
         self.update_ui()
 
     def update_ui(self):

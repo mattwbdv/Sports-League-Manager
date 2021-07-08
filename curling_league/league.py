@@ -23,6 +23,9 @@ class League(IdentifiedObject):
             raise DuplicateOid(prop.oid)
         self._teams.append(prop)
 
+    def remove_team(self, prop):
+        self._teams.remove(prop)
+
     def add_competition(self, prop):
         if prop in self.competitions_in_league:
             raise DuplicateOid(prop.oid)

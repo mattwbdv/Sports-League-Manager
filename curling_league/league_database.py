@@ -62,13 +62,6 @@ class LeagueDatabase:
                                      'Member name': member.name,
                                      'Member email': member.email})
 
-    def add_team_to_league(self, league, team_to_add):
-        index = self._leagues.index(league)
-        self._leagues[index].add_team(team_to_add)
-
-    def remove_team_from_league(self, league, team_to_remove):
-        index = self._leagues.index(league)
-
     def import_league(self, new_league, file_name):
         imported_league = {}
         i = 0
