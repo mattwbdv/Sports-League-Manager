@@ -8,5 +8,10 @@ setup(name='curling_league',
       author='Matt Koenig',
       author_email='matthewkoenig@acm.org',
       url='https://github.com/mattwbdv/Sports-League-Manager',
-      packages=['curling_league', 'distutils.command'],
-     )
+      packages=['curling_league'],
+      install_requires=[
+            'PyQt5',
+            'yagmail'
+      ],
+      dependency_links=['https://pypi.org/project/PyQt5/', 'https://pypi.org/project/yagmail/']
+      )
