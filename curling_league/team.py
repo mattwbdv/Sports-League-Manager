@@ -24,7 +24,6 @@ class Team(IdentifiedObject):
         else:
             raise DuplicateEmail(member.oid)
 
-
     def emails(self):
         emails = []
         for x in self.members:

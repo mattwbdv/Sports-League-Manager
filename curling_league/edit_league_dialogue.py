@@ -1,7 +1,13 @@
+# TODO - league importer
+# TODO - catch error cases (i.e. editing when not selected)
+
 import sys
 
 from PyQt5 import uic, QtWidgets
+from PyQt5.QtWidgets import QDialog
 
+
+from curling_league.edit_player_dialogue import EditPlayerDialogue
 from curling_league.league_database import LeagueDatabase
 from curling_league.team import Team
 
@@ -22,6 +28,9 @@ class EditLeagueDialogue(QTBaseWindow, UI_MainWindow):
 
             # removes selected team from the league
             self.remove_button.clicked.connect(self.remove_button_clicked)
+
+            # edits the team currently selected
+            self.edit_team_button.clicked.connect(self.edit_team_clicked)
 
     def add_button_clicked(self):
         # get OID and team name for team to add
@@ -45,6 +54,13 @@ class EditLeagueDialogue(QTBaseWindow, UI_MainWindow):
         self.teams_list_widget.clear()
         for team in self.league.teams:
             self.teams_list_widget.addItem(str(team))
+
+    def edit_team_clicked(self):
+        row = self.teams_list_widget.currentRow()
+        team = self.league.teams[row]
+        dialog = EditPlayerDialogue(team)
+        if dialog.exec() == QDialog.DialogCode.Accepted:
+            pass
 
 
 if __name__ == '__main__':
