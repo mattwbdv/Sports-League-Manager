@@ -3,7 +3,7 @@
 This is a sports league manager that can be used with the provided UI or as a headless API to manage a sports league via email or some other interface. 
 
 
-##The interface follows the following spec: 
+## The interface follows the following spec: 
 ### Main window shows list of leagues in the current database. Has load/save menu items and/or buttons that raise Qt5 file dialogs to select the file to load/save. Has buttons to:
 • Delete a league
 
