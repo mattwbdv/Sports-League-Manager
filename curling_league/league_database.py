@@ -49,7 +49,7 @@ class LeagueDatabase:
         if p.exists():
             p.rename(file_name+".backup")
         with open(file_name, mode="wb") as f:
-            pickle.dump(self._leagues, f)
+            pickle.dump(self._sole_instance, f)
 
     def export_league(self, league, file_name):
         with open(file_name, 'w', newline='') as f:
