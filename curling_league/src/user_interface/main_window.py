@@ -9,7 +9,7 @@ from curling_league.src.api.league_database import LeagueDatabase
 from curling_league.src.api.league import League
 
 
-UI_MainWindow, QTBaseWindow = uic.loadUiType("src/user_interface/main_window.ui")
+UI_MainWindow, QTBaseWindow = uic.loadUiType("main_window.ui")
 
 
 class MainWindow(QTBaseWindow, UI_MainWindow):
