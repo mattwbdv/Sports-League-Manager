@@ -21,7 +21,7 @@ This is a sports league manager that can be used with the provided UI or as a he
 • Edit a team
 
 
-###Team editor shows list of team members in the team being edited. Has buttons to
+### Team editor shows list of team members in the team being edited. Has buttons to
 
 • Delete a member
 
