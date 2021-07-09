@@ -6,11 +6,11 @@ from PyQt5 import uic, QtWidgets
 from PyQt5.QtWidgets import QDialog
 
 
-from curling_league.src.edit_player_dialogue import EditPlayerDialogue
-from curling_league.src.league_database import LeagueDatabase
-from curling_league.src.team import Team
+from curling_league.src.user_interface.edit_player_dialogue import EditPlayerDialogue
+from curling_league.src.api.league_database import LeagueDatabase
+from curling_league.src.api.team import Team
 
-UI_MainWindow, QTBaseWindow = uic.loadUiType("src/edit_league_dialogue.ui")
+UI_MainWindow, QTBaseWindow = uic.loadUiType("src/user_interface/edit_league_dialogue.ui")
 
 
 class EditLeagueDialogue(QTBaseWindow, UI_MainWindow):

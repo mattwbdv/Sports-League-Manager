@@ -1,4 +1,4 @@
-from curling_league.src.identified_object import IdentifiedObject
+from curling_league.src.api.identified_object import IdentifiedObject
 
 
 class TeamMember(IdentifiedObject):

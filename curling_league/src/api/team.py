@@ -1,5 +1,5 @@
-from curling_league.src.duplicate_email_check import DuplicateEmail
-from curling_league.src.identified_object import IdentifiedObject
+from curling_league.src.api.duplicate_email_check import DuplicateEmail
+from curling_league.src.api.identified_object import IdentifiedObject
 
 
 class Team(IdentifiedObject):
