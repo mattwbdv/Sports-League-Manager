@@ -1,6 +1,6 @@
 import unittest
 
-from curling_league.emailer import Emailer
+from curling_league import Emailer
 
 
 class TestEmailer(unittest.TestCase):

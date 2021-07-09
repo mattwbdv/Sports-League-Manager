@@ -1,6 +1,3 @@
-from curling_league.duplicate_oid_check import DuplicateOid
-
-
 class IdentifiedObject:
     # Initializes an object with an OID (and sets current ID one higher)
     def __init__(self, oid):

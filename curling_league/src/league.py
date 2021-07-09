@@ -1,5 +1,5 @@
-from curling_league.duplicate_oid_check import DuplicateOid
-from curling_league.identified_object import IdentifiedObject
+from curling_league.src.duplicate_oid_check import DuplicateOid
+from curling_league.src.identified_object import IdentifiedObject
 
 
 class League(IdentifiedObject):

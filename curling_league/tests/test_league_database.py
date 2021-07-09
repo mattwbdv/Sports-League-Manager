@@ -2,10 +2,10 @@ import unittest
 from pathlib import Path
 
 
-from curling_league.league_database import LeagueDatabase
-from curling_league.league import League
-from curling_league.team import Team
-from curling_league.team_member import TeamMember
+from curling_league import LeagueDatabase
+from curling_league import League
+from curling_league import Team
+from curling_league import TeamMember
 
 class LeagueDatabaseTests(unittest.TestCase):
     def export_league_test(self):

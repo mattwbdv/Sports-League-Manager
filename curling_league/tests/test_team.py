@@ -1,8 +1,8 @@
 import unittest
 
-from curling_league.team import Team
-from curling_league.team_member import TeamMember
-from curling_league.duplicate_email_check import DuplicateEmail
+from curling_league import Team
+from curling_league import TeamMember
+from curling_league import DuplicateEmail
 
 
 class TeamTests(unittest.TestCase):

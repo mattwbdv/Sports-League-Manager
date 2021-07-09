@@ -1,6 +1,6 @@
 import unittest
 
-from curling_league.team_member import TeamMember
+from curling_league import TeamMember
 
 
 class TeamMemberTests(unittest.TestCase):

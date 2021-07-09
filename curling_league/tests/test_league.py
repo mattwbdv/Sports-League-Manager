@@ -1,9 +1,9 @@
 import unittest
 
-from curling_league.competition import Competition
-from curling_league.league import League
-from curling_league.team import Team
-from curling_league.team_member import TeamMember
+from curling_league import Competition
+from curling_league import League
+from curling_league import Team
+from curling_league import TeamMember
 
 
 class LeagueTests(unittest.TestCase):

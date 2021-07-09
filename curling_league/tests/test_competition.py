@@ -1,10 +1,10 @@
 import unittest
 import datetime
 
-from curling_league.competition import Competition
-from curling_league.league import League
-from curling_league.team import Team
-from curling_league.duplicate_oid_check import DuplicateOid
+from curling_league import Competition
+from curling_league import League
+from curling_league import Team
+from curling_league import DuplicateOid
 
 
 class DuplicateOID:

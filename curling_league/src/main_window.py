@@ -4,12 +4,12 @@ from PyQt5.QtWidgets import QFileDialog
 from PyQt5 import uic, QtWidgets
 from PyQt5.QtWidgets import QDialog
 
-from curling_league.edit_league_dialogue import EditLeagueDialogue
-from curling_league.league_database import LeagueDatabase
-from curling_league.league import League
+from curling_league.src.edit_league_dialogue import EditLeagueDialogue
+from curling_league.src.league_database import LeagueDatabase
+from curling_league.src.league import League
 
 
-UI_MainWindow, QTBaseWindow = uic.loadUiType("main_window.ui")
+UI_MainWindow, QTBaseWindow = uic.loadUiType("src/main_window.ui")
 
 
 class MainWindow(QTBaseWindow, UI_MainWindow):

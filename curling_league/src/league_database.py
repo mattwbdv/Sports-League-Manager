@@ -1,9 +1,8 @@
 import pickle
 import csv
 from pathlib import Path
-from curling_league.team_member import TeamMember
-from curling_league.league import League
-from curling_league.team import Team
+from curling_league.src.team_member import TeamMember
+from curling_league.src.team import Team
 
 
 class LeagueDatabase:
