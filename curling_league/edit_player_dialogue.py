@@ -13,6 +13,7 @@ class EditPlayerDialogue(QTBaseWindow, UI_MainWindow):
         super().__init__(parent)
         self.setupUi(self)
         self.team = team
+        self.update_ui()
         self.add_player_button.clicked.connect(self.add_player_clicked)
         self.remove_player.clicked.connect(self.remove_player_clicked)
 

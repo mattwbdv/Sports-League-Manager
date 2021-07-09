@@ -1,8 +1,7 @@
-# TODO - league importer
-# TODO - catch error cases (i.e. editing when not selected)
 
 import sys
 
+from PyQt5.QtWidgets import QFileDialog
 from PyQt5 import uic, QtWidgets
 from PyQt5.QtWidgets import QDialog
 
@@ -31,6 +30,9 @@ class EditLeagueDialogue(QTBaseWindow, UI_MainWindow):
 
             # edits the team currently selected
             self.edit_team_button.clicked.connect(self.edit_team_clicked)
+
+            # loads league from a CSV
+            self.load_league.clicked.connect(self.load_league_clicked)
 
     def add_button_clicked(self):
         # get OID and team name for team to add
@@ -61,6 +63,13 @@ class EditLeagueDialogue(QTBaseWindow, UI_MainWindow):
         dialog = EditPlayerDialogue(team)
         if dialog.exec() == QDialog.DialogCode.Accepted:
             pass
+
+    def load_league_clicked(self):
+        result, _ = QFileDialog.getOpenFileName(
+            self, "Choose league to open")
+        if result:
+            LeagueDatabase.instance().import_league(self.league, result)
+            self.update_ui()
 
 
 if __name__ == '__main__':

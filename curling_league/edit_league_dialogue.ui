@@ -50,7 +50,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_4">
+          <widget class="QPushButton" name="load_league">
            <property name="text">
             <string>Import a League</string>
            </property>

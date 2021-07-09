@@ -68,6 +68,7 @@ class MainWindow(QTBaseWindow, UI_MainWindow):
             self, "Choose league to open")
         if result:
             LeagueDatabase.instance().load(result)
+            self.update_ui()
 
     def action_quit_triggered(self):
         exit()
